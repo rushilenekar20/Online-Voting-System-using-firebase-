@@ -1,0 +1,93 @@
+<html>
+    <head>
+        
+        <script src="https://www.gstatic.com/firebasejs/7.14.0/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.14.0/firebase-firestore.js"></script>
+        <!-- The core Firebase JS SDK is always required and must be listed first -->
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+        <script src="https://www.gstatic.com/firebasejs/7.14.0/firebase-analytics.js"></script>
+
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+
+        <h1> Voting System</h1>
+
+        <div class="topnav">
+            <a  href="index.html">Create Voter Id</a>
+            <a class="active" href="createCandidate.html">Create Candidate Id</a>
+
+          </div>
+
+
+        <div class="content">
+
+            <form id="add-candidate-form">
+                
+                
+                
+                <div class="col-75">
+                    <input type="text" name="fname" placeholder="First Name">
+                </div>
+    
+                <div class="col-75">
+                        <input type="text" name="lname" placeholder="Last Name">
+                </div>
+
+                <div class="col-75">
+                    <input type="text" name="sex" placeholder="Sex">
+                </div>
+
+                <div class="col-75">
+                    <input type="number" name="age" placeholder="Age">
+                </div>
+
+                <div class="col-75">
+                <input type="text" name="city" placeholder="city">
+                </div>
+
+                <div class="col-75">
+                    <input type="text" name="partyname" placeholder="Party name">
+                </div>
+
+                <div class="col-75">
+                    <input type="text" name="symbol" placeholder="Party Symbol Letter">
+                </div>
+                  
+                <div class="col-75">
+                    <button>Add Candidate</button>
+                </div>
+                
+
+
+            </form>
+            
+
+            <ul id="candidate-list"></ul>
+
+        </div>
+
+       
+        <script>
+            // Your web app's Firebase configuration
+            var firebaseConfig = {
+              apiKey: "AIzaSyACz1d-AFyIwbwU5pphAMt4du5wupQQrUo",
+              authDomain: "justvote-4daf2.firebaseapp.com",
+              databaseURL: "https://justvote-4daf2.firebaseio.com",
+              projectId: "justvote-4daf2",
+              storageBucket: "justvote-4daf2.appspot.com",
+              messagingSenderId: "712780780376",
+              appId: "1:712780780376:web:fc579fe807f860719a4b2d",
+              measurementId: "G-W2CGCMZBB0"
+            };
+            // Initialize Firebase
+            firebase.initializeApp(firebaseConfig);
+            const db = firebase.firestore();
+            db.settings({ timestampsInSnapshots: true }); 
+            firebase.analytics();
+          </script>
+        <script src="createcandidate.js"></script>
+    </body>
+</html>

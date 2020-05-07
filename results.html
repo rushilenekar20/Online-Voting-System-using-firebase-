@@ -1,0 +1,56 @@
+<html>
+    <head>
+        
+        <script src="https://www.gstatic.com/firebasejs/7.14.0/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.14.0/firebase-firestore.js"></script>
+        <!-- The core Firebase JS SDK is always required and must be listed first -->
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+        <script src="https://www.gstatic.com/firebasejs/7.14.0/firebase-analytics.js"></script>
+
+        <link rel="stylesheet" href="results.css">
+    </head>
+    <body>
+
+        
+
+        <div class="topnav">
+            <a  href="addvotes.html">VOTING BOOTH</a>
+            <a class="active" href="results.html">Results</a>
+
+          </div>
+
+
+        <div class="content">
+
+            
+            <ul id="candidate-list"></ul>
+
+           
+               
+
+        </div>
+
+       
+        <script>
+            // Your web app's Firebase configuration
+            var firebaseConfig = {
+              apiKey: "AIzaSyACz1d-AFyIwbwU5pphAMt4du5wupQQrUo",
+              authDomain: "justvote-4daf2.firebaseapp.com",
+              databaseURL: "https://justvote-4daf2.firebaseio.com",
+              projectId: "justvote-4daf2",
+              storageBucket: "justvote-4daf2.appspot.com",
+              messagingSenderId: "712780780376",
+              appId: "1:712780780376:web:fc579fe807f860719a4b2d",
+              measurementId: "G-W2CGCMZBB0"
+            };
+            // Initialize Firebase
+            firebase.initializeApp(firebaseConfig);
+            const db = firebase.firestore();
+            db.settings({ timestampsInSnapshots: true }); 
+            firebase.analytics();
+          </script>
+        <script src="results.js"></script>
+    </body>
+</html>

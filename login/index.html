@@ -1,0 +1,59 @@
+<html>
+<head>
+  <title>Firebase Login</title>
+
+  <script src="https://www.gstatic.com/firebasejs/7.14.0/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.14.0/firebase-firestore.js"></script>
+        <!-- The core Firebase JS SDK is always required and must be listed first -->
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+        <script src="https://www.gstatic.com/firebasejs/7.14.0/firebase-analytics.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Nunito:400,600,700" rel="stylesheet">
+  
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div id="login_div" class="main-div">
+    <h3>Firebase Web login Example</h3>
+    <input type="email" placeholder="Email..." id="email_field" />
+    <input type="password" placeholder="Password..." id="password_field" />
+
+    <button onclick="login()">Login to Account</button>
+  </div>
+
+  <div id="user_div" class="loggedin-div">
+    <h3>Welcome User</h3>
+    <p id="user_para">Welcome to Firebase web login Example. You're currently logged in.</p>
+    <a href="/home.html" style="text-decoration: none;"><button > GO TO HOME PAGE</button></a>
+  </div>
+
+
+
+  <script src="https://www.gstatic.com/firebasejs/4.8.1/firebase.js"></script>
+  <script>
+ 
+
+
+     // Your web app's Firebase configuration
+     var firebaseConfig = {
+              apiKey: "AIzaSyACz1d-AFyIwbwU5pphAMt4du5wupQQrUo",
+              authDomain: "justvote-4daf2.firebaseapp.com",
+              databaseURL: "https://justvote-4daf2.firebaseio.com",
+              projectId: "justvote-4daf2",
+              storageBucket: "justvote-4daf2.appspot.com",
+              messagingSenderId: "712780780376",
+              appId: "1:712780780376:web:fc579fe807f860719a4b2d",
+              measurementId: "G-W2CGCMZBB0"
+            };
+            // Initialize Firebase
+            firebase.initializeApp(firebaseConfig);
+            const db = firebase.firestore();
+            db.settings({ timestampsInSnapshots: true }); 
+            firebase.analytics();
+  </script>
+  <script src="index.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,62 @@
+<html>
+
+<head>
+ 
+    <script src="https://www.gstatic.com/firebasejs/7.14.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.14.0/firebase-firestore.js"></script>
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+ https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/7.14.0/firebase-analytics.js"></script>
+    
+  <link rel="stylesheet" href="searchvoter.css" />
+
+</head>
+
+<body>
+  <div class="main-div">
+    <h3>Search your name in voter list</h3>
+    <p> Search your name in your ward</p>
+
+    <form id="searchvoter">
+        <label for="ward">Enter your city name</label>
+        <input  type="text" name="ward" placeholder="ex..pune " >
+        <br>
+        <button onclick="searchvoter()"> Search </button>
+
+    </form>
+  </div>
+  <div class="list">
+
+    <ul id="voterlist"></ul>
+  </div>
+
+
+
+    
+    <script>
+        // Your web app's Firebase configuration
+        var firebaseConfig = {
+          apiKey: "AIzaSyACz1d-AFyIwbwU5pphAMt4du5wupQQrUo",
+          authDomain: "justvote-4daf2.firebaseapp.com",
+          databaseURL: "https://justvote-4daf2.firebaseio.com",
+          projectId: "justvote-4daf2",
+          storageBucket: "justvote-4daf2.appspot.com",
+          messagingSenderId: "712780780376",
+          appId: "1:712780780376:web:fc579fe807f860719a4b2d",
+          measurementId: "G-W2CGCMZBB0"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        const db = firebase.firestore();
+        db.settings({ timestampsInSnapshots: true }); 
+        firebase.analytics();
+       
+      </script>
+    <script src="searchvoter.js" > </script>
+
+</body>
+
+
+</html>

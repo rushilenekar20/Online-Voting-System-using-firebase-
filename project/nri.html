@@ -1,0 +1,75 @@
+<html>
+
+<head>
+
+    
+    <script src="https://www.gstatic.com/firebasejs/7.14.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.14.0/firebase-firestore.js"></script>
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+ https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/7.14.0/firebase-analytics.js"></script>
+
+    <link rel="stylesheet" href="nri.css" />
+</head>
+
+<body>
+    <body class="main-div">
+    <h3> Registeration Of voters </h3>
+    <p>*Please fill the Form Accurately :</p>
+    <p> Personal's Details:</p>
+
+    <form id="addvoterform">
+
+        <label for="fname" >First Name :</label>
+        <input type="text"  name="fname" placeholder="*Rushikesh" ><br/><br/>
+        
+        <label for="lname" >Last Name :</label>
+        <input type="text"  name="lname" placeholder="*Lenekar" ><br/><br/>
+
+        <label for="dob" >Date of Birth :</label>
+        <input type="text"  name="dob" placeholder="dd/mm/yyyy" ><br/><br/>
+
+        <label for="nri" >NRI COUNTRY  :</label>
+        <input type="text"  name="nri" placeholder="eg..phiji" ><br/><br/>
+
+        <label for="address" >Address :</label>
+        <input type="text"  name="address" placeholder="current address" ><br/><br/>
+
+        <label for="sex" >Gender :</label>
+        <input type="text"  name="sex" placeholder="male / female" ><br/><br/>
+        
+        <label for="mob" >Mobile :</label>
+        <input type="number"  name="mob" placeholder="10 digits" ><br/><br/><br/><br/>
+
+        <button onclick="submitForm()"> Register </button>
+    </form>
+    <button onclick="getvoterid()"> Generate voter Id</button>
+  </body>
+    <h4 id="Submitstatus"></h4>
+
+    
+    <script>
+        // Your web app's Firebase configuration
+        var firebaseConfig = {
+          apiKey: "AIzaSyACz1d-AFyIwbwU5pphAMt4du5wupQQrUo",
+          authDomain: "justvote-4daf2.firebaseapp.com",
+          databaseURL: "https://justvote-4daf2.firebaseio.com",
+          projectId: "justvote-4daf2",
+          storageBucket: "justvote-4daf2.appspot.com",
+          messagingSenderId: "712780780376",
+          appId: "1:712780780376:web:fc579fe807f860719a4b2d",
+          measurementId: "G-W2CGCMZBB0"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        const db = firebase.firestore();
+        db.settings({ timestampsInSnapshots: true }); 
+        firebase.analytics();
+       
+      </script>
+    <script src="nri.js"></script>
+</body>
+
+</html>
